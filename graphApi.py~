@@ -16,7 +16,7 @@ url = '%s?fields=%s&access_token=%s' % \
 # any programming language by making a request to the URL.
 # Click the hyperlink that appears in your notebook output
 # when you execute this code cell to see for yourself...
-#print url
+print url
 
 # Interpret the response as JSON and convert back
 # to Python data structures
