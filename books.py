@@ -20,4 +20,4 @@ def get_books():
 
 r=get_books()
 for book in r:
-	print "Book:" + book['name'] + "is liked by " + book['likes'] + '\n'
+	print "Book:" + book['name'] #+ "is liked by " + book['likes'] + '\n'
