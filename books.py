@@ -4,7 +4,7 @@ import requests # pip install requests
 import json	
 
 base_url = raw_input("Enter the id : ") 
-base_url = 'https://graph.facebook.com/' + base_url
+base_url = 'https://graph.facebook.com/v2.3/' + base_url + '?'
 ACCESS_TOKEN = raw_input("Paste here the access token : ")
 fields ='books{name,likes}'
 
@@ -13,10 +13,11 @@ def get_books():
         Returns the list of posts on my timeline
     """
 
-    parameters = {'access_token': ACCESS_TOKEN}
-    r = requests.get('https://graph.facebook.com/741504455940261/books', params=parameters)
+    url = base_url + 'fields=' + fields + '&access_token='+ACCESS_TOKEN	
+    r = requests.get(url)
     result = json.loads(r.text)
-    return result["data"]
+    books = result["books"]
+    return books['data']
 
 r=get_books()
 for book in r:
